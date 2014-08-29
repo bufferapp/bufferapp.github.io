@@ -1,0 +1,15 @@
+{
+  "name": "Buffer-Driven-Development",
+  "version": "0.0.1",
+  "description": "Examples that describe Buffer's development culture",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "connect": "~3.1.1",
+    "serve-static": "~1.5.3"
+  }
+}
