@@ -77,7 +77,96 @@
 </head>
 <body id="opensource" class="nobar page">
 <div class="app ">  
+  <!-- brian refactor -->
 
+<div class="page-sidebar-container show-on-mobile" id="js-sidebar-container">
+    <section class="page-sidebar">
+        <ul class="page-sidebar-list">
+            
+                            <li><a href="/app" class="page-sidebar-item">Return to Dashboard</a></li>
+                <li><a href="/app/account/email" class="page-sidebar-item">Email Settings</a></li>
+                <li><a href="/app/account/password" class="page-sidebar-item">Access &amp; Password</a></li>
+                                <li><a href="/app/account/receipts" class="page-sidebar-item">Billing</a></li>
+                                <li><a href="/app/account/apps" class="page-sidebar-item">Apps &amp; Extras</a></li>
+                <li class="divider"></li>
+                <li>
+                    <form action="/signout" id="signout-form" method="get">
+                        <input type="hidden" value="94ea987f110cf8d4e1002009698036f6" name="csrf_token" />
+                        <a href="javascript:{}" class="page-sidebar-item last" onclick="$('#signout-form').submit(); return false;">
+                            Sign Out
+                        </a>
+                    </form>
+                </li>
+            
+                    </ul>
+    </section>
+</div>
+
+<div class="sidebar-push" id="js-sidebar-push"> <!-- this is used to push the content when the mobile sidebar is active -->
+
+    <div id="modal-login" class="reveal-modal login-modal ajax js-login-modal ">
+            <div class="row social-buttons js-normal-signup"
+         style="">
+        <a href="/oauth/twitter?csrf_token=94ea987f110cf8d4e1002009698036f6"
+           class="large twitter button" id="twitter-sign-on">
+            <i class="ss-icon ss-social">twitter</i> Sign in with Twitter
+        </a>
+        <a href="/oauth/facebook?csrf_token=94ea987f110cf8d4e1002009698036f6"
+           class="large facebook button" id="facebook-sign-on">
+           <i class="ss-icon ss-social">facebook</i> Sign in with Facebook
+        </a>
+        <a href="/oauth/linkedin?csrf_token=94ea987f110cf8d4e1002009698036f6"
+           class="large linkedin button" id="linkedin-sign-on">
+            <i class="ss-icon ss-social">linkedin</i> Sign in with LinkedIn
+        </a>
+    </div>
+    <form action="/signin" method="post" class="js-normal-signup"
+          style="">
+        <div class="content row">
+        
+            <span class="or-wrapper">
+                <span class="or-text">or</span>
+            </span>
+
+            <div class="row">
+                <input type="text" name="email" id="email" autocomplete="off" placeholder="Your Email Address"/>
+            </div>
+
+            <div class="row">
+                <input type="password" name="password" id="password" autocomplete="off" placeholder="Your Password"/>
+                <input type="hidden" name="lat" id="lat" />
+                <input type="hidden" name="lng" id="lng" />
+                <input type="hidden" name="csrf_token" id="csrf" value="94ea987f110cf8d4e1002009698036f6" />
+            </div>
+
+            
+            <div class="submit-actions">
+                <input type="submit" name="signin" value="Create Account" class="btn-primary create-primary" id="create-account-button" />
+                <input type="submit" name="signin" value="Sign In" class="simple submit-primary" id="sign-into-account-button" />
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" name="remember" id="remember" checked="checked" />
+                <label for="remember">Keep me signed in</label>
+            </div>
+
+            <div class="forgot-pass " id='forgot-password-link'>
+                <a href="/oops" target=''>Forgot password?</a>
+            </div>
+
+            <div class="small-copy" id='modal-link-copy'>
+            </div>
+
+            <div class="forgot-pass" id='create-account-link' style="display:none;">
+                <a href="#">Create account</a>
+            </div>
+
+            <div class="forgot-pass" id='sign-in-link' style="display:none;">
+                <a href="#">Sign in</a>
+            </div>
+        </div>
+    </form>
+</div>
   <section class="hero dark-background" id="js-hero" style="background: url('https://buffer-uploads.s3.amazonaws.com/5543c1ca570a0327191e0ad2/a74a2a5ad4b4ca98ccb07ef0a87cb124.png') no-repeat; background-size: cover;">
   <div class="content">
     <div class="container" style="z-index: 1">
